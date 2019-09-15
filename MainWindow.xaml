@@ -1,0 +1,96 @@
+﻿<Window x:Class="USB_Multi_Copy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:USB_Multi_Copy"
+        mc:Ignorable="d"
+        Title="USB Multi Copy"
+        Height="475"
+        Width="540">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="155" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"  Margin="10">
+            <Label FontWeight="Bold">Selected drive letters:</Label>
+            <CheckBox Name="cb_a">Drive A</CheckBox>
+            <CheckBox Name="cb_b">Drive B</CheckBox>
+            <CheckBox Name="cb_c">Drive C</CheckBox>
+            <CheckBox Name="cb_d">Drive D</CheckBox>
+            <CheckBox Name="cb_e">Drive E</CheckBox>
+            <CheckBox Name="cb_f">Drive F</CheckBox>
+            <CheckBox Name="cb_g">Drive G</CheckBox>
+            <CheckBox Name="cb_h">Drive H</CheckBox>
+            <CheckBox Name="cb_i">Drive I</CheckBox>
+            <CheckBox Name="cb_j">Drive J</CheckBox>
+            <CheckBox Name="cb_k">Drive K</CheckBox>
+            <CheckBox Name="cb_l">Drive L</CheckBox>
+            <CheckBox Name="cb_m">Drive M</CheckBox>
+            <CheckBox Name="cb_n">Drive N</CheckBox>
+            <CheckBox Name="cb_o">Drive O</CheckBox>
+            <CheckBox Name="cb_p">Drive P</CheckBox>
+            <CheckBox Name="cb_q">Drive Q</CheckBox>
+            <CheckBox Name="cb_r">Drive R</CheckBox>
+            <CheckBox Name="cb_s">Drive M</CheckBox>
+            <CheckBox Name="cb_t">Drive T</CheckBox>
+            <CheckBox Name="cb_u">Drive U</CheckBox>
+            <CheckBox Name="cb_v">Drive V</CheckBox>
+            <CheckBox Name="cb_w">Drive W</CheckBox>
+            <CheckBox Name="cb_x">Drive X</CheckBox>
+            <CheckBox Name="cb_y">Drive Y</CheckBox>
+            <CheckBox Name="cb_z">Drive Z</CheckBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10,10,10,10" >
+            <Label FontWeight="Bold">Set drive name:</Label>
+            <TextBox 
+                Name="drive_name" 
+                Width="300" 
+                HorizontalAlignment="Left" 
+                TextChanged="Drive_name_TextChanged">
+                NOLABEL
+            </TextBox>
+            <Label 
+                FontWeight="Bold">
+                Set partition type:
+            </Label>
+            <ComboBox 
+                Name="filesystem" 
+                Width="100" 
+                HorizontalAlignment="Left" 
+                SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem IsSelected="True">EXFAT</ComboBoxItem>
+                <ComboBoxItem>FAT32</ComboBoxItem>
+                <ComboBoxItem>NTFS</ComboBoxItem>
+            </ComboBox>
+            <Label FontWeight="Bold">Select folder to copy:</Label>
+            <StackPanel Orientation="Horizontal">
+                <TextBox 
+                    Width="300" 
+                    Height="Auto" 
+                    DockPanel.Dock="Right" 
+                    HorizontalAlignment="Left" 
+                    Name="folder_path" />
+                <Button 
+                    Width="30" 
+                    Padding="0" 
+                    Margin="10,0,0,0" 
+                    DockPanel.Dock="Right" 
+                    Click="BrowseFolder" 
+                    HorizontalAlignment="Left">
+                    ...
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Button 
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="20"
+            Width="100" Click="Button_Click">
+            Start
+        </Button>
+    </Grid>
+</Window>
